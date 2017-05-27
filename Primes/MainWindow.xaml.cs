@@ -101,13 +101,20 @@ namespace Primes
 		};
 
 		private static void DeemphisizeNumberUi(DependencyObject element)
-			=> element.SetValue(FontWeightProperty, FontWeights.UltraLight);
+		{
+			element.SetValue(FontWeightProperty, FontWeights.UltraLight);
+			element.SetValue(BackgroundProperty, new SolidColorBrush(Colors.White));
+		}
 
 		private static void EmphisizeNumberUi(DependencyObject element)
-			=> element.SetValue(FontWeightProperty, FontWeights.Bold);
+		{
+		}
 
 		private static void ReallyEmphisizeNumberUi(DependencyObject element)
-			=> element.SetValue(FontSizeProperty, 16.0);
+		{
+			element.SetValue(FontWeightProperty, FontWeights.Bold);
+			element.SetValue(BackgroundProperty, new SolidColorBrush(Colors.LightBlue));
+		}
 
 		private static bool IsDeemphisizedNumberUi(DependencyObject element)
 			=> element.GetValue(FontWeightProperty).Equals(FontWeights.UltraLight);
